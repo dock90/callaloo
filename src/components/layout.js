@@ -15,7 +15,6 @@ const Container = styled.div`
 
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr auto;
-  grid-gap: 10px;
 
   height: 100vh;
 `
