@@ -14,7 +14,9 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
+    "@sanity/block-content-to-react": "^2.0.7",
     "babel-plugin-styled-components": "^1.10.7",
+    "dotenv": "^8.2.0",
     "gatsby": "^2.23.3",
     "gatsby-plugin-styled-components": "^3.3.4",
     "gatsby-source-sanity": "^5.0.6",
@@ -23,7 +25,15 @@
     "styled-components": "^5.1.1"
   },
   "devDependencies": {
-    "prettier": "2.0.5"
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.2.0",
+    "eslint-config-airbnb": "^18.1.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.21.2",
+    "eslint-plugin-jsx-a11y": "^6.3.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.20.0",
+    "prettier": "^2.0.5"
   },
   "repository": {
     "type": "git",
