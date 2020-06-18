@@ -12,6 +12,7 @@ const Container = styled.div`
   grid-area: header;
   background-image: url(${Background});
   display: grid;
+  padding: 0 1rem;
 `
 
 const Nav = styled.div`
@@ -45,7 +46,7 @@ const Phone = styled.div`
 
 const Links = styled.div`
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-template-rows: auto;
   align-content: center;
   border-bottom: 4px solid white;
@@ -66,6 +67,10 @@ const Social = styled.div`
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: auto;
   grid-gap: 1rem;
+
+  @media only screen and (max-width: 767px), only screen and (max-device-width: 767px) {
+    display: none;
+  }
 `
 
 const SocialLink = styled.a`
@@ -86,46 +91,15 @@ const Logo = styled.img`
   margin-bottom: 4rem;
 `
 
-const NewsContainer = styled.div`
-  background: #31200f;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-gap: 1rem;
-  align-items: center;
-  padding: 1rem 3rem;
-
-  h3 {
-    margin: 0;
-    color: #eae2b7;
-    text-transform: uppercase;
-  }
-
-  input {
-    height: 40px;
-    border: 2px solid #eae2b7;
-  }
-
-  button {
-    max-width: 160px;
-    height: 46px;
-    background: #31200f;
-    text-transform: uppercase;
-    color: white;
-    font-size: 1rem;
-    letter-spacing: 0.18rem;
-    border: 2px solid #eae2b7;
-    cursor: pointer;
-  }
-`
-
 const Header = () => (
   <Container>
     <Nav>
       <Phone>
         <h5>Call and order now!</h5>
-        <a href="tel:+17178243964">717.824.3964</a>
+        <a href="tel:+17178243964" title="Call Callaloo">717.824.3964</a>
       </Phone>
       <Links>
+        <Link to="/">Home</Link>
         <Link to="/menu">Menu</Link>
         <a href="https://orders.cake.net/10917448" target="_blank" rel="noopener noreferrer">
           Online Ordering
@@ -144,11 +118,6 @@ const Header = () => (
       </Social>
     </Nav>
     <Logo src={LogoImg} />
-    <NewsContainer>
-      <h3>Sign up for news and upcoming specials</h3>
-      <input />
-      <button>Join</button>
-    </NewsContainer>
   </Container>
 )
 

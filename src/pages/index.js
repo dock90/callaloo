@@ -22,7 +22,7 @@ const IntroContainer = styled.div`
   grid-template-columns: 1fr;
   grid-template-rows: auto;
   justify-items: center;
-  margin: 4rem 4rem 2rem 4rem;
+  margin: 4rem 4rem 0 4rem;
 `
 
 const IntroHeading = styled.div`
@@ -55,7 +55,7 @@ const Photos = styled.div`
   grid-template-rows: auto;
   grid-gap: 1rem;
   justify-items: center;
-  margin: 2rem;
+  margin: 4rem 2rem;
 `
 
 const FoodPhoto = styled.img`
