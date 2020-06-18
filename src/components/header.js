@@ -46,7 +46,7 @@ const Phone = styled.div`
 
 const Links = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-template-rows: auto;
   align-content: center;
   border-bottom: 4px solid white;
@@ -99,7 +99,6 @@ const Header = () => (
         <a href="tel:+17178243964" title="Call Callaloo">717.824.3964</a>
       </Phone>
       <Links>
-        <Link to="/">Home</Link>
         <Link to="/menu">Menu</Link>
         <a href="https://orders.cake.net/10917448" target="_blank" rel="noopener noreferrer">
           Online Ordering

@@ -3,6 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import styled from 'styled-components'
 // components
 import Layout from '../components/layout'
+import MenuItems from '../components/menuItems'
 
 // styles
 const Container = styled.div`
@@ -19,8 +20,11 @@ const Category = styled.h2`
 
 const Menu = () => {
   const categoriesData = useStaticQuery(graphql`
-    query MENU_CATEGORIES_QUERY {
-      allSanityMenuCategory {
+    query GET_MENU_CATEGORIES_QUERY {
+      allSanityMenuCategory (sort : {
+        fields: _updatedAt
+        order: DESC
+      }){
         nodes {
           menuCategoryName
         }
@@ -38,7 +42,7 @@ const Menu = () => {
             return (
               <Fragment>
                 <Category>{menuCategoryName}</Category>
-                <p>Items</p>
+                <MenuItems category={menuCategoryName} />
               </Fragment>
             )
           })}
