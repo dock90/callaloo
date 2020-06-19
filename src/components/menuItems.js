@@ -1,5 +1,4 @@
 import React from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
 import BlockContent from '@sanity/block-content-to-react'
 import styled from 'styled-components'
 
@@ -15,28 +14,7 @@ const ItemContainer = styled.div`
   border-bottom: 1px solid #31200f;
 `
 
-const MenuItems = ({ category }) => {
-  const menuItemsData = useStaticQuery(graphql`
-    query GET_MENU_ITEMS_QUERY {
-      allSanityMenuItem (
-        sort : {
-          fields: _updatedAt
-          order: ASC
-        }
-      ) {
-        nodes {
-          _id
-          menuItemName
-          menuItemPrice
-          menuItemCategory {
-            menuCategoryName
-          }
-          _rawMenuItemDescription
-        }
-      }
-    }
-  `)
-
+const MenuItems = ({ category, menuItemsData }) => {
   if (menuItemsData) {
     const { allSanityMenuItem: { nodes } } = menuItemsData
     return (
@@ -65,6 +43,7 @@ const MenuItems = ({ category }) => {
       </Container>
     )
   }
+  return null
 }
 
 export default MenuItems
