@@ -1,5 +1,19 @@
 import React from 'react'
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql } from 'gatsby'
+import BlockContent from '@sanity/block-content-to-react'
+import styled from 'styled-components'
+
+// styles
+const Container = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 4rem;
+  margin: 0 2rem 2rem 2rem;
+`
+
+const ItemContainer = styled.div`
+  border-bottom: 1px solid #31200f;
+`
 
 const MenuItems = ({ category }) => {
   const menuItemsData = useStaticQuery(graphql`
@@ -11,6 +25,7 @@ const MenuItems = ({ category }) => {
         }
       ) {
         nodes {
+          _id
           menuItemName
           menuItemPrice
           menuItemCategory {
@@ -23,13 +38,12 @@ const MenuItems = ({ category }) => {
   `)
 
   if (menuItemsData) {
-    console.log('Menu Items Data: ', menuItemsData)
     const { allSanityMenuItem: { nodes } } = menuItemsData
     return (
-      <div>
+      <Container>
         {nodes.map(menuItem => {
-          console.log('Menu Item: ', menuItem)
           const {
+            _id,
             menuItemName,
             menuItemPrice,
             menuItemCategory: {
@@ -40,12 +54,15 @@ const MenuItems = ({ category }) => {
 
           if (menuCategoryName === category) {
             return (
-              <p>{menuItemName}</p>
+              <ItemContainer key={_id}>
+                <p><b>{menuItemName}</b> | {menuItemPrice}</p>
+                <BlockContent blocks={_rawMenuItemDescription} />
+              </ItemContainer>
             )
           }
-
+          return null;
         })}
-      </div>
+      </Container>
     )
   }
 }

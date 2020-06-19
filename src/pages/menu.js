@@ -26,6 +26,7 @@ const Menu = () => {
         order: DESC
       }){
         nodes {
+          _id
           menuCategoryName
         }
       }
@@ -38,9 +39,10 @@ const Menu = () => {
       <Layout>
         <Container>
           {nodes.map(category => {
-            const { menuCategoryName } = category
+            console.log(category)
+            const { _id, menuCategoryName } = category
             return (
-              <Fragment>
+              <Fragment key={_id} >
                 <Category>{menuCategoryName}</Category>
                 <MenuItems category={menuCategoryName} />
               </Fragment>
