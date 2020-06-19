@@ -106,17 +106,17 @@ const Header = () => (
       </Links>
       <Social>
         <SocialLink href="https://www.facebook.com/callalootrinidadiankitchen/">
-          <SocialIcon src={FbIcon} />
+          <SocialIcon src={FbIcon} alt="Facebook Social Icon" />
         </SocialLink>
         <SocialLink href="https://www.instagram.com/callalootrinidadiankitchen/">
-          <SocialIcon src={IgIcon} />
+          <SocialIcon src={IgIcon} alt="Instagram Social Icon" />
         </SocialLink>
         <SocialLink href="https://www.yelp.com/biz/callaloo-lancaster?osq=Trinidadian">
-          <SocialIcon src={YlpIcon} />
+          <SocialIcon src={YlpIcon} alt="Yelp Social Icon" />
         </SocialLink>
       </Social>
     </Nav>
-    <Logo src={LogoImg} />
+    <Logo src={LogoImg} alt="Callaloo Logo" />
   </Container>
 )
 

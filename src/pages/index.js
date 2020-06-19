@@ -76,9 +76,9 @@ const Home = () => {
           </IntroBody>
         </IntroContainer>
         <Photos>
-          <FoodPhoto src={Img1} />
-          <FoodPhoto src={Img2} />
-          <FoodPhoto src={Img3} />
+          <FoodPhoto src={Img1} alt="Image of Callalloo Burger" />
+          <FoodPhoto src={Img2} alt="Image of Callaloo Doubles" />
+          <FoodPhoto src={Img3} alt="Image of Callalloo Curry" />
         </Photos>
       </Container>
     </Layout>
