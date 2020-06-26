@@ -7,8 +7,7 @@ const Container = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 4rem;
-  margin-bottom: 2rem;
-  max-width: 800px;
+  margin: 0 1rem 2rem 1rem;
 `
 
 const ItemContainer = styled.div`
